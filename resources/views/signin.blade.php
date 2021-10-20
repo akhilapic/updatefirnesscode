@@ -85,7 +85,7 @@
 										<a href="#" class="social-btn googleplus-btn d-flex aic"><img src="{{asset('/assets/images/googleplsu-btn-img.svg')}}" alt="">Sign In with Google</a>
 									</div>
 	
-									<p class="f-16 flight gray-600 order-sm-2 order-1 mb-sm-0 mb-5 text-sm-left text-center">Not a Member ? <a href="signup.html" class="fm white">Sign Up </a></p>
+									<p class="f-16 flight gray-600 order-sm-2 order-1 mb-sm-0 mb-5 text-sm-left text-center">Not a Member ? <a href="{{url('signup')}}" class="fm white">Sign Up </a></p>
 								</div>
 							</div>
 						</div>
