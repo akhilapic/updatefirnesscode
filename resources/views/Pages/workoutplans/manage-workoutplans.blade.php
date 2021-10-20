@@ -59,7 +59,7 @@
                                         <td><input type="checkbox" class="sub_chk" data-id="{{$item->id}}"></td>
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->name }}</td>
-                                        <td>{{ $item->category }}</td>
+                                        <td>{{ $item->category_name }}</td>
                                         
                                         <td>{{ $item->level }}</td>
                                         <td>{{ $item->type }}</td>

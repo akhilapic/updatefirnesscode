@@ -56,19 +56,12 @@
 						<div class="mb-3 col-md-6">
 								<label for="Name" class="control-label"> Workout Plan Category:</label>
 									<select selected class="form-control" required="true" required="true" name ="category" id="category">
+
 										<option value="">Select Category</option>
-										<option value="Weight Lifting">Weight Lifting</option>
-										<option value="Sports Training">Sports Training</option>
-										<option value="HIIT Training">HIIT Training</option>
-                                        <option value="Dynamic Training">Dynamic Training</option>
-                                        <option value="Body Weight">Body Weight</option>
-                                        <option value="Follow Along">Follow Along</option>
-                                        <option value="Strength Training">Strength Training</option>
-                                        <option value="Body Building">Body Building</option>
-                                        <option value="Functional Training">Functional Training</option>
-                                        <option value="Prenatal Training">Prenatal Training</option>
-                                        <option value="Mobility Training">Mobility Training</option>
-                                        <option value="Hands-Free">Hands-Free</option>
+										@foreach($workout_category as $v)
+											<option value="{{$v->id}}">{{$v->name}}</option>
+										@endforeach
+										
                                 </select>
 							</div>
 							<div class="mb-4 col-md-6">

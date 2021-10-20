@@ -147,9 +147,28 @@ class SetAvailabilityController extends Controller
             $leave_date = DB::select($sql);
            
        //     dd($datestr);
-         //   dd($leavemanagesarr);
+          
+            $listdata = [];
+      //      dd($leavemanages);
+      //  echo "<pre>";
 
-          //  dd($leave_date);
+        //     foreach($list as $k=> $l)
+        //     {
+        //         if(!empty($leavemanages[$k]->date))
+        //         {
+        //             if(in_array($leavemanages[$k]->date, $list))
+        //               {
+
+        //                 $list[$k] .="/status=0";//close
+        //               }
+        //           }
+        //           else
+        //           {
+        //             $list[$k] .="/status=1";       //open
+         
+        //         }
+        // }
+ //   dd($list);
         return view('Pages.setAvailability.setAvailability',compact('fitnesstrainer','setavailabilitydata','working_days','working_day_statusshow','leavemanages','list','leave_date'));
     }
 

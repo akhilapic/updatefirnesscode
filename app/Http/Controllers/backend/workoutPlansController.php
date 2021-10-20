@@ -20,15 +20,20 @@ class workoutPlansController extends Controller
 {
     public function index()
     { 
-        $workoutplans = workoutPlans::all(); 
+        //$workoutplans = workoutPlans::all(); 
+  $workoutplans = workoutPlans::join('workout_category',"workout_category.id","=","workout_plans.category")
+                    ->get(['workout_category.name as category_name','workout_plans.*']);
+
+                 //   dd($workoutplans); 
         return view('Pages.workoutplans.manage-workoutplans', compact('workoutplans'));
     }
     public function add_workout_plan_view()
     {
         $fitnesstrainers = User::where(['role'=>"97",'status'=>2])->get();
        
+        $workout_category = DB::table('workout_category')->get();
 
-        return view('Pages.workoutplans.add_workout_plan_view',compact('fitnesstrainers'));
+        return view('Pages.workoutplans.add_workout_plan_view',compact('fitnesstrainers','workout_category'));
     }
 /*
     public function store(Request $request)
@@ -561,9 +566,9 @@ class workoutPlansController extends Controller
 //    }
 //    exit;
      //dd($workoutPlans);
-
+  $workout_category = DB::table('workout_category')->get();
    if($workoutPlans){
-            return view('Pages.workoutplans.edit_workout_plan_view',compact('workoutPlans','no_of_days','exercise_details','days','fitnesstrainers'));
+            return view('Pages.workoutplans.edit_workout_plan_view',compact('workoutPlans','no_of_days','exercise_details','days','fitnesstrainers','workout_category'));
         }
      
     }

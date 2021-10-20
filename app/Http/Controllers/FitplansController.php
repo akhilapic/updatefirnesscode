@@ -15,12 +15,13 @@ class FitplansController extends Controller
 {
     public function index()
     {
+           $workout_category = DB::table('workout_category')->get();
         $workoutplansfitness = workoutPlans::join('users', 'users.id', '=', 'workout_plans.trainer_id')
                 ->where("users.status","2")
               ->get(['workout_plans.*', 'users.id as  fitness_trainers_id' ,'users.status','users.name as fitness_trainers_name']);
             $workoutfrequency = workoutPlans::all();
             
-        return view('fit-plans',compact('workoutplansfitness','workoutfrequency'));
+        return view('fit-plans',compact('workoutplansfitness','workoutfrequency','workout_category'));
     }
 
     public function getdata_fit_plans()
@@ -347,6 +348,7 @@ class FitplansController extends Controller
        //      print_r($s[0]->id);
        //  }
         //exit;
-        return view('after_payment',compact('workoutplan','exercise_details'));
+          $workout_category = DB::table('workout_category')->get();
+        return view('after_payment',compact('workoutplan','exercise_details','workout_category'));
     }
 }

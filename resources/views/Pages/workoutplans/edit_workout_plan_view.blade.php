@@ -59,27 +59,11 @@
 								<label for="Name" class="control-label"> Workout Plan Category:</label>
 								<select selected class="form-control" require = "true" name ="category" id="category">
 										<option value="">Select Category</option>
-										<option value="Weight Lifting" @if($workoutPlans->category == "Weight Lifting") selected  @endif >Weight Lifting</option>
-										<option value="Sports Training" @if($workoutPlans->category == "Sports Training") selected  @endif >Sports Training</option>
-										<option value="HIIT Training" @if($workoutPlans->category == "HIIT Training") selected  @endif >HIIT Training</option>
-
-										 <option value="Dynamic Training" @if($workoutPlans->category == "Dynamic Training") selected  @endif >Dynamic Training</option>
-
-										 <option value="Body Weight" @if($workoutPlans->category == "Body Weight") selected  @endif >Body Weight</option>
-
-										 <option value="Follow Along" @if($workoutPlans->category == "Follow Along") selected  @endif >Follow Along</option>
-
-										 <option value="Strength Training" @if($workoutPlans->category == "Strength Training") selected  @endif >Strength Training</option>
-
-										  <option value="Body Building"  @if($workoutPlans->category == "Body Building") selected  @endif >Body Building</option>
-
-										  <option value="Functional Training" @if($workoutPlans->category == "Functional Training") selected  @endif >Functional Training</option>
-                                                                
-                                        	<option value="Prenatal Training" @if($workoutPlans->category == "Prenatal Training") selected  @endif >Prenatal Training</option>
-    	
-    	                                    <option value="Mobility Training" @if($workoutPlans->category == "Mobility Training") selected  @endif >Mobility Training</option>
-        
-                                            <option value="Hands-Free" @if($workoutPlans->category == "Hands-Free") selected  @endif >Hands-Free</option>
+										@if(($workout_category))
+											@foreach($workout_category as $val)
+												<option value="{{$val->id}}" @if($workoutPlans->category == $val->id) selected  @endif>{{$val->name}}</option>
+											@endforeach
+										@endif
                                     </select>
 							</div>
 							<div class="mb-4 col-md-6">

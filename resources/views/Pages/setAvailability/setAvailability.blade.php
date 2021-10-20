@@ -272,10 +272,10 @@ $base_url = URL::to('/');
                     </div>
                     <div class="col-md-4 col-sm-6 col-12 mb-sm-0 mb-4">
                         <ul class="card-btns d-flex aic jcc">
-							<li><a href="#"><img class="paypal-logo" src="{{asset('public/assets/images/paypal-logo.png')}}" alt=""></a></li>
-							<li><a href="#"><img class="visa-logo" src="{{asset('public/assets/images/visa-logo.png')}}" alt=""></a></li>
-							<li><a href="#"><img class="mastercard-logo" src="{{asset('public/assets/images/master-card-logo.png')}}" alt=""></a></li>
-						</ul>
+                            <li><a href="#"><img class="paypal-logo" src="{{asset('public/assets/images/paypal-logo.png')}}" alt=""></a></li>
+                            <li><a href="#"><img class="visa-logo" src="{{asset('public/assets/images/visa-logo.png')}}" alt=""></a></li>
+                            <li><a href="#"><img class="mastercard-logo" src="{{asset('public/assets/images/master-card-logo.png')}}" alt=""></a></li>
+                        </ul>
                     </div>
                     <div class="col-md-4 col-sm-6 col-12">
                         <ul class="footer-social-icons d-flex aic justify-content-sm-end justify-content-center">
@@ -1324,23 +1324,23 @@ $(".add_more").on("click",function(){
   formData.append("_token",$('meta[name="csrf-token"]').attr('content'));
   formData.append("from_time",from_time);
   formData.append("to_time",to_time);
-  	jQuery.ajax({
-			url: host_url+"firness_trainer_time_slot",
-			type: "post",
-			cache: false,
-			data: formData,
-			processData: false,
-			contentType: false,
-			
-			success:function(data) { 
-			var obj = JSON.parse(data);
-			if(obj.status==true){
+    jQuery.ajax({
+            url: host_url+"firness_trainer_time_slot",
+            type: "post",
+            cache: false,
+            data: formData,
+            processData: false,
+            contentType: false,
+            
+            success:function(data) { 
+            var obj = JSON.parse(data);
+            if(obj.status==true){
                 console.log(obj.data);
                 window.location.href= host_url+"Set-Availability";
-			}
+            }
 
-			}
-		});
+            }
+        });
 });
 $(".btnsubmittimeslot").on("click",function(){
     from_time = $("#efrom_time").val();
@@ -1361,23 +1361,23 @@ $(".btnsubmittimeslot").on("click",function(){
   formData.append("_token",$('meta[name="csrf-token"]').attr('content'));
   formData.append("from_time",from_time);
   formData.append("to_time",to_time);
-	jQuery.ajax({
-			url: host_url+"edit_firness_trainer_time_slot",
-			type: "post",
-			cache: false,
-			data: formData,
-			processData: false,
-			contentType: false,
-			
-			success:function(data) { 
-			var obj = JSON.parse(data);
-			if(obj.status==true){
+    jQuery.ajax({
+            url: host_url+"edit_firness_trainer_time_slot",
+            type: "post",
+            cache: false,
+            data: formData,
+            processData: false,
+            contentType: false,
+            
+            success:function(data) { 
+            var obj = JSON.parse(data);
+            if(obj.status==true){
                 console.log(obj.data);
                 window.location.reload();
-			}
+            }
 
-			}
-		});
+            }
+        });
 });
 
 //==============btsubmitnset_working_day start add============================
@@ -1390,23 +1390,23 @@ host_url = "/development/fitness/";
   var formData= new FormData(jQuery('#set_working_day')[0]);
   formData.append("fitness_trainner_id",{{Session::get('fitness_tranner_id')}});
   formData.append("_token",$('meta[name="csrf-token"]').attr('content'));
-	jQuery.ajax({
-			url: host_url+"add_firness_trainer_set_working_day",
-			type: "post",
-			cache: false,
-			data: formData,
-			processData: false,
-			contentType: false,
-			
-			success:function(data) { 
-			var obj = JSON.parse(data);
-			if(obj.status==true){
+    jQuery.ajax({
+            url: host_url+"add_firness_trainer_set_working_day",
+            type: "post",
+            cache: false,
+            data: formData,
+            processData: false,
+            contentType: false,
+            
+            success:function(data) { 
+            var obj = JSON.parse(data);
+            if(obj.status==true){
                 console.log(obj.data);
                 window.location.reload();
-			}
+            }
 
-			}
-		});
+            }
+        });
     });
 //==============btsubmitnset_working_day end add============================
 
